@@ -1,0 +1,8 @@
+<% unless items.blank? %>
+  <h1><%= "The following are the items present with the user"%></h1>
+  <% items.each do |item| %>
+  <%= "Item Name: #{item.name}" %><br>
+  <% end %>
+<% else %>
+  <h1> <%= "Items are empty" %></h1>
+<% end %>
