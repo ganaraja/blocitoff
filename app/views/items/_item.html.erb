@@ -1,7 +1,11 @@
 <% unless items.blank? %>
   <h1><%= "The following are the items present with the user"%></h1>
+
   <% items.each do |item| %>
-  <%= "Item Name: #{item.name}" %><br>
+
+  <div id=<%="item-#{item.id}"%> class="item list-group-item">
+        <%= link_to "#{item.name}", user_item_path(current_user,item), method: :delete, remote: true %>
+  </div>
   <% end %>
 <% else %>
   <h1> <%= "Items are empty" %></h1>
