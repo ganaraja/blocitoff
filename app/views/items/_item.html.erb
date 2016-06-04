@@ -1,3 +1,4 @@
 <div id=<%="item-#{item.id}"%> class="item list-group-item">
       <%= link_to "#{item.name}", user_item_path(current_user,item), method: :delete, remote: true %>
+      <p class='list-group-item-text'><%= time_left(item) %></p>
 </div>
